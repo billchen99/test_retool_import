@@ -1,6 +1,6 @@
 window.Document = class Document {
   static test1(x){
-    return x + 1; 
+    return x + 2; 
   }
 }
 
