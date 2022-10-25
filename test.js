@@ -17,3 +17,18 @@ window.Shipment = class Shipment {
   	this.SHIPMENT_ID = shipment.id;
   }
 }
+
+window.HELPERS = class HELPERS {
+    static convertDateTimeToMountainTime(date) {
+        const options = {
+            year: 'numeric', month: 'short', day: 'numeric',
+            hour: 'numeric', minute: 'numeric',
+            timeZoneName: 'short',
+            hour12: true,
+            timeZone: 'America/Denver'
+        };
+        const convertedDate = new Date(date);
+        const formattedDate = new Intl.DateTimeFormat('en-US', options).format(convertedDate);
+        return (formattedDate) ? formattedDate : '---';
+    }
+}
